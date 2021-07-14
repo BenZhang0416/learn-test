@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立方体</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 200px; 
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+            /* 让box旋转 */
+            transform: rotate3d(1,1,0,-30deg);
+            /* 让子元素保留3d变换之后的效果 */
+            transform-style: preserve-3d; 
+        }
+        .box > div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        .front{
+            background-color: red;
+            transform: translateZ(100px); 
+        }
+        .back{
+            background-color: green;
+            transform: translateZ(-100px);
+        }
+        .left{
+            background-color: blue;
+        }
+        .right{
+            background-color: pink;
+        }
+        .top{
+            background-color: purple;
+        }
+        .bottom{
+            background-color: orange ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="front">front<front/div>
+        <div class="back">back</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="top">top</div>
+        <div class="bottom">bottom</div>
+    </div>
+
+</body>
+</html>

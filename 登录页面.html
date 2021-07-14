@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Login</title>  
+    <link rel="stylesheet" type="text/css" href="text.css"/>  
+</head>  
+<body>  
+    <div id="login">  
+        <h1>登录</h1>  
+        <form method="post">  
+            <input type="text" required="required" placeholder="用户名" name="u"></input>  
+            <input type="password" required="required" placeholder="密码" name="p"></input>  
+            <button class="but" type="submit">登录</button>  
+        </form>  
+    </div>  
+</body> 
+<script>
+    const map = {};
+    const nums = [];
+    const map1 = new Map();
+    for (let num of nums) {
+        map[num] = (map[num] || 0) + 1;
+        map1.set(num, (map1.get(num) || 0) + 1);
+    }
+    const n = 10, m = 10;
+    const array = new Array(n).fill(0).map(() => new Array(m).fill(0));
+</script>
+</html>  
