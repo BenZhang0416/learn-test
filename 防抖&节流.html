@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖节流</title>
+</head>
+<body>
+    <!-- 防抖：短时间内大量出发同一事件最终只会执行一次 -->
+    <!-- 利用计时器来实现 -->
+    <script>
+        const debouce = function(fn, delay) {
+            /**
+            * @param [Function] fn 需要使用防抖的函数
+            * @param [Number] delay 毫秒，防抖期限值
+            */
+            let timer = null 
+            return () => {
+                if (timer) {
+                    // 进入此分支说明，当前正在一个即使周期中，并且在此触发了事件，取消当前计时，重新开始计时
+                    clearTimeout(timer)
+                }
+                // 进入此分支说明，当前没有计时，则开始新的计时
+                timer = setTimeout(fn, delay)
+            }
+        }    
+    </script>
+
+    <!-- 节流：短时间内大量触发同一事件，函数执行一次后在某个指定的时间内不再执行，直到过了这个指定的时间才会重新生效 -->
+    <!-- 实现：状态位，时间戳，setTimeOut 标记 -->
+    <!-- 方案一：状态位 -->
+    <script>
+        const throttle = (fn, delay) => {
+            /**
+             * @param [Function] fn 需要使用防抖的函数
+             * @param [Number] delay 毫秒，防抖期限值
+            */
+           let valid = true
+           return () => {
+               if (!valid) {
+                   return false
+               }
+
+                //    执行函数，把状态位置为无效
+               valid = false
+               setTimeout(() => {
+                   fn()
+                   valid = true
+               }, delay);
+           }
+        }
+    </script>
+
+    <!-- 方案二： 时间戳 -->
+    <script>
+        const throttle = (fn, delay) => {
+            /**
+             * @param [Function] fn 需要使用防抖的函数
+             * @param [Number] delay 毫秒，防抖期限值
+            */
+            let start 
+            return () => {
+                let now = Date.now()
+                if (!start) {
+                    start = now
+                } 
+
+                if (now - start >= delay) {
+                    fn()
+                    start = null
+                }    
+            }
+        }
+    </script>
+
+    <!-- 方案三：setTimeOut 标记 -->
+    <script>
+        const throttle = (fn, delay) => {
+            /**
+             * @param [Function] fn 需要使用防抖的函数
+             * @param [Number] delay 毫秒，防抖期限值
+            */
+            let timer = null
+            return () => {
+                if (!timer) {
+                    timer = setTimeout(() => {
+                        fn()
+                        timer = null
+                    }, delay);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
