@@ -1,0 +1,24 @@
+<body>
+    <input type="text">
+    <button>添加</button>
+    <ul>
+        <li>苹果</li>
+        <li>香蕉</li></li>
+        <li>葡萄</li>
+    </ul>
+    <script>
+        // let li = document.querySelectorAll("li")
+        // let ul = document.querySelector("ul")
+        // for (let i = 0; i < li.length; i++) {
+        //    li[i].onclick = function(e){
+        //        ul.removeChild(e.target)
+        //    } 
+        // }
+
+        // 事件委托方式
+        let ul = document.querySelector("ul")
+        ul.onclick = function(e) {
+            ul.removeChild(e.target)
+        }
+    </script>
+</body>

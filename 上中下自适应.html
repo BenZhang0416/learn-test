@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: auto;
+        }
+        .top{
+            height: 100px;
+            background-color: pink;
+        }
+        .bottom{
+            height: 100px;
+            background-color: rgb(155, 17, 17);
+        }
+        .mid{
+            flex: 1;
+            height: 100%;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">上</div>
+        <div class="mid">中</div>
+        <div class="bottom">下</div>
+    </div>
+</body>
+</html>

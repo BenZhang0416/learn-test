@@ -1,0 +1,162 @@
+
+    <section class="top-bottom absolute">
+        <style>
+          body,
+          .absolute,
+          article {
+            height: 100%;
+            overflow: hidden;
+          }
+     
+          .absolute div {
+            width: 100%;
+          }
+     
+          .absolute .top {
+            position: absolute;
+            top: 0;
+            height: 100px;
+            background: red;
+          }
+     
+          .absolute .middle {
+            position: absolute;
+            top: 100px;
+            bottom: 100px;
+            height: 100%;
+            background: #0ff;
+          }
+     
+          .absolute .bottom {
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            background: yellow;
+          }
+        </style>
+        <article>
+          <div class="top"></div>
+          <div class="middle">上下固定，中间自适应 absolute实现</div>
+          <div class="bottom"></div>
+        </article>
+      </section>
+    
+      <section class="top-bottom flex">
+        <style>
+          html,
+          body,
+          .flex,
+          article {
+            height: 100%;
+          }
+     
+          .flex article {
+            display: flex;
+            flex-direction: column;
+          }
+     
+          .flex .top {
+            height: 100px;
+            background: red;
+          }
+     
+          .flex .middle {
+            flex: 1;
+            height: 100%;
+            background: #0ff;
+          }
+     
+          .flex .bottom {
+            height: 100px;
+            background: yellow;
+          }
+        </style>
+        <article>
+          <div class="top"></div>
+          <div class="middle">上下固定，中间自适应 flex实现</div>
+          <div class="bottom"></div>
+        </article>
+      </section>
+
+      <section class="top-bottom table">
+        <style>
+          html,
+          body,
+          .table,
+          article {
+            height: 100%;
+          }
+     
+          .table article {
+            display: table;
+            width: 100%;
+          }
+     
+          .table article div {
+            width: 100%;
+            display: table-row;
+          }
+     
+          .table .top {
+            height: 100px;
+            background: red;
+          }
+     
+          .table .middle {
+            background: #0ff;
+          }
+     
+          .table .bottom {
+            height: 100px;
+            background: yellow;
+          }
+        </style>
+        <article>
+          <div class="top">top</div>
+          <div class="middle">上下固定，中间自适应 table实现</div>
+          <div class="bottom">bottom</div>
+        </article>
+      </section>
+    
+
+      <section class="top-bottom grid">
+        <style>
+          html,
+          body,
+          .grid,
+          article {
+            height: 100%;
+          }
+     
+          .grid article {
+            display: grid;
+            width: 100%;
+            grid-template-rows: 100PX auto 100px;
+          }
+     
+          .grid article div {
+            width: 100%;
+            display: grid-row;
+          }
+     
+          .grid .top {
+            background: red;
+          }
+     
+          .grid .middle {
+            height: 100%;
+            background: #0ff;
+          }
+     
+          .grid .bottom {
+            background: yellow;
+          }
+        </style>
+        <article>
+          <div class="top">top</div>
+          <div class="middle">上下固定，中间自适应 grid实现</div>
+          <div class="bottom">bottom</div>
+        </article>
+      </section>
+    
+    
