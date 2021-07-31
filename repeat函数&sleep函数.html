@@ -36,5 +36,14 @@
             console.log(`睡眠了${time / 1000}s,然后开始做事`)
         })
     </script>
+
+    <script>
+        String.prototype._repeat = function(n) {
+            return new Array(n+1).join(this)
+        }
+        a = 'abs'
+        console.log(a._repeat(3)) 
+    </script>
+
 </body>
 </html>
