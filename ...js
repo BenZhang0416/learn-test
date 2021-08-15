@@ -23,3 +23,4 @@ c()
 obj = obj.c()
 obj.c = c
 obj.c()
+

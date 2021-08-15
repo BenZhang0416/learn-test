@@ -1,0 +1,98 @@
+<style>
+    .container{
+        display: flex;
+        justify-content: center;
+        background-color:pink;
+        height: 200px;
+    }
+    .left{
+        width: 200px;
+        background-color: red;
+        height: 100%;
+    }
+    .main{
+        flex: 1;
+        background-color: yellow;
+    }
+    .right{
+        width: 200px;
+        background-color:blue;
+        height: 100%;
+    }
+
+    .container1{
+        position: relative;
+        background-color: #fff;
+        height: 200px;
+    }
+    .left1{
+        position: absolute;
+        height: 200px;
+        width: 100px;
+        left: 0;
+        top: 0;
+        background-color: aqua;
+    }
+    .right1{
+        position: absolute;
+        height: 200px;
+        width: 100px;
+        right: 0;
+        top: 0;
+        background-color: blueviolet;
+    }
+    .main1{
+        height: 200px;
+        margin: 0;
+        background-color: yellow;
+    }
+
+    .content{
+        float: left;
+        width: 100%;
+    }
+    .main3{
+        height: 200px;
+        margin-left: 110px;
+        margin-right: 220px;
+        background-color: yellow;
+    }
+    .left3{
+        float: left;
+        height: 200px;
+        width: 100px;
+        margin-left: -100%;
+        background-color: red;
+    }
+    .right3{
+        width: 200px;
+        height: 200px;
+        float: right;
+        margin-left: -100%;
+        background-color:green;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="main">flex布局</div>
+        <div class="right"></div>
+    </div>
+
+    <div class="container1">
+        <div class="left1">绝对定位布局</div>
+        <div class="main1">绝对定位布局</div>
+        <div class="right1"></div>
+    </div>
+
+
+
+    <div class="content">
+        <div class="main3">双飞翼布局</div></div>
+    </div>
+    <div class="left3"></div>
+    <div class="right3"></div>
+
+    
+</body>

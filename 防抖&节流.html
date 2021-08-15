@@ -9,6 +9,7 @@
 <body>
     <!-- 防抖：短时间内大量出发同一事件最终只会执行一次 -->
     <!-- 利用计时器来实现 -->
+    <!-- 箭头函数写法，注意返回的值 -->
     <script>
         const debouce = function(fn, delay) {
             /**
@@ -25,6 +26,23 @@
                 timer = setTimeout(fn, delay)
             }
         }    
+    </script>
+
+    <script>
+        function debounce1(fn, delay) {
+            let timer = null;
+            
+            return function() {
+                if(timer) {
+                    clearTimeout(timer);
+                    timer = null;
+                }
+
+                timer = setTimeout(() => {
+                    fn.apply(context, args)
+                }, dealy);
+            }
+        }
     </script>
 
     <!-- 节流：短时间内大量触发同一事件，函数执行一次后在某个指定的时间内不再执行，直到过了这个指定的时间才会重新生效 -->

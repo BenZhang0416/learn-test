@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            background-color: #9a6d61
+        }
+ 
+        div {
+            border: solid 1px #5cb85c;
+        }
+    </style>
+</head>
+<body>
+<div style="position: absolute;top: 30%;left: 30%;height: 300px;width: 500px">
+    <button onclick="cherry()" style="width: 50px;position:relative;left:50%">赋值</button>
+    <textarea id="word"
+              style="width: 99%;line-height: 50px;vertical-align: center;font-size: 25px;text-align: center">
+        WATCH_TV_AT_CHINA
+    </textarea><br/>
+ 
+    <button onclick="sugar()" style="width: 150px;position:relative;left:25%">下划线转换驼峰</button>
+    <button onclick="banana(1)" style="width: 50px;position:relative;left:30%">清空</button>
+    <br/>
+    <input id="btn" type="text"
+           style="width: 99%;font-size: 25px;line-height: 50px;vertical-align: center;text-align: center"/>
+    <button onclick="peach()" style="width: 150px;position:relative;left:25%">驼峰转换下划线</button>
+    <button onclick="banana(2)" style="width: 50px;position:relative;left:30%">清空</button>
+</div>
+<script>
+    function sugar() {
+        var a = document.getElementById("word").value.trim();
+        var b = a.split("_");
+        var c = [];
+        for (var i = 0; i < b.length; i++) {
+            if (i == 0) {
+                c.push(b[i].toLowerCase());
+            } else {
+                console.log(b[i].charAt(0));
+                c.push(b[i].replace(/\b\w+\b/g, function (word) {
+                        return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+                    }
+                ));
+            }
+        }
+ 
+        document.getElementById("btn").value = c.join("");
+    }
+ 
+    function banana(param) {
+        if (param == 1) {
+            document.getElementById("word").value = "";
+        } else {
+            document.getElementById("btn").value = "";
+        }
+    }
+ 
+    function cherry() {
+        document.getElementById("word").value = "WATCH_TV_AT_CHINA";
+    }
+ 
+    var str = "border-bottom-color";
+    /*function tf(){
+        var arr=str.split("-");
+        for(var i=1;i<arr.length;i++){
+            arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
+        }
+        return arr.join("");
+    };
+    tf(str);*/
+    /*var str="border-bottom-color";
+    function tf(){
+        var re=/-(\w)/g;
+        str=str.replace(re,function($0,$1){
+            return $1.toUpperCase();
+        });
+        alert(str)
+    };
+    tf(str);*/
+    function peach() {
+        debugger;
+        var param = document.getElementById("btn").value;
+        var result = "";
+        if (param != null && param.length > 0) {
+            // 将第一个字符处理成大写
+            result+=param.substring(0, 1).toUpperCase();
+            // 循环处理其余字符
+            for (var i = 1; i < param.length; i++) {
+                var s = param.substring(i, i + 1);
+                // 在大写字母前添加下划线
+                if (s == s.toUpperCase() && (/^[0-9A-Z]*$/.test(s.charAt(0)))) {
+                    result += "_";
+                }
+                // 其他字符直接转成大写
+                result += s.toUpperCase();
+            }
+        }
+        document.getElementById("word").value = result;
+    }
+</script>
+</body>
+</html>
+

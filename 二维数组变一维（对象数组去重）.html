@@ -3,16 +3,29 @@
         let arr = [1, [1,2], [[1,2]]]
         ans = []
 
-        function flatten(arr) {
-            if(!arr.length) return arr;
+        // function flatten(arr) {
+        //     if(!arr.length) return arr;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (Array.isArray(arr[i])) {
+        //             flatten(arr[i])
+        //         } else {
+        //             ans.push(arr[i])             
+        //         }
+        //     }
+        //     return ans;
+        // }
+
+        function flattern(arr) {
+            ans = [];
+            if (!arr) return arr;
             for (let i = 0; i < arr.length; i++) {
                 if (Array.isArray(arr[i])) {
-                    flatten(arr[i])
+                    flattern[arr[i]];
                 } else {
-                    ans.push(arr[i])             
+                    ans.push(arr[i])
                 }
             }
-            return ans;
+            return ans
         }
 
         console.log(flatten(arr))
