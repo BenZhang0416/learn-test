@@ -15,7 +15,7 @@ function toLine(name) {
 let b = 'aBdaNf';
 console.log(toLine(b));
 
-// 对象驼峰转下划线
+// 对象驼峰转下划线,正则转换
 function objectHumpToLine(obj) {
     var newObj = new Object()
     for (let key in obj) {
