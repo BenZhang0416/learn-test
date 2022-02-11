@@ -38,7 +38,7 @@ function setColor(state) {
 // 第三步，将数据放入
 // let trafficLight = poll(setColor(null));
 
-// 版本三：异步转换为同步写法
+// 版本三：异步转换为同步写法，利用promise
 // 两个行为：1、亮灯； 2、等待
 function lightBulb(color) {
   console.log(color);
