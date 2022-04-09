@@ -26,7 +26,7 @@ var step = function() {
         return light(1000, yellow);
     }).then(function() {
         step();
-        break
+        breakw
     });
 }
 

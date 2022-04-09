@@ -33,5 +33,7 @@ friend: {
 // newObj.friend.name = 'gougou'
 console.log(oldObj);
 // console.log(newObj);
+// 方法一
 let ans = JSON.parse(JSON.stringify(oldObj));
+// 方法二
 console.log(ans);
